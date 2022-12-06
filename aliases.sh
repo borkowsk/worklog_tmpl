@@ -182,9 +182,12 @@ wcommit() {
 }
 
 wsave() {
-  #sync with the git server 
+  #save into your git server (upload data from this desktop)
   #This needs to be run sometimes :-)
   pushd ${WORKLOG} > /dev/null
+  
+  "$DEFGIT" add *.log >> ${HOME}/aliases.out
+  
   wcommit
   
   "$DEFGIT" push 
@@ -199,6 +202,7 @@ wsave() {
 
 
 wupdate() {
+  #sync with the git server (download data from your other desktops)
   pushd ${WORKLOG} > /dev/null
   
   "$DEFGIT" add *.log >> ${HOME}/aliases.out
@@ -221,7 +225,7 @@ wupdate() {
 }
 
 wsync() {
-  wupdate && wsave
+  wupdate
 }
 
 wedit() {

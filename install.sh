@@ -1,5 +1,5 @@
 #!/bin/bash
-#"worklog"  monitoring (version 1.25 and above)
+#"worklog"  monitoring (version 1.25b and above)
 ################################################################################
 # Instalacja skryptów logowania pracy
 
@@ -125,7 +125,8 @@ else #OTHER UNIX SYSTEMS WITH bash
 	gedit ".git/info/exclude" "$HOME/.bashrc" "$HOME/.profile"
 	
 	$ECHO $COLOR1 "\nChecking for linuxlogo..." $NORMCO
-	if [[ ! -d "/usr/bin/linuxlogo" ]]
+	linuxlogo
+	if [[ $? != 0 ]]
 	then
 		$ECHO $COLOR2"Tool 'linuxlogo' is suggested for this toolbox!" $NORMCO
 		sudo apt install linuxlogo
@@ -143,9 +144,10 @@ else #OTHER UNIX SYSTEMS WITH bash
 	fi
 	
 	$ECHO $COLOR1 "\nChecking for sysstat..." $NORMCO
-	if [[ ! -d "/usr/lib/sysstat" ]]
+	mpstat
+	if [[ $? != 0 ]]
 	then
-		$ECHO $COLOR2"Tool 'sysstat' is required for this toolbox to work!" $NORMCO
+		$ECHO $COLOR2"Tool 'mpstat' from 'sysstat' is required for this toolbox to work!" $NORMCO
 		sudo apt install sysstat
 	else
 		echo OK
