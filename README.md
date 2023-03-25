@@ -3,7 +3,7 @@
 __Skrypty do rejestrowania pracy__ 
 
 
-Działa pod UBUNTU 16.04, 18.04, 20.04 oraz częściowo pod ZORIN, a także pod 
+Działa pod UBUNTU 16.04, 18.04, 20.04 oraz częściowo pod 22.04 i ZORIN, a także pod 
 Windows w oknie obsługiwanym przez bash z MINGW64 (bez kontroli "idle time").
 
 **SPOSÓB UŻYCIA**
