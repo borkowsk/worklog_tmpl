@@ -53,6 +53,7 @@ then
   fi
 else
 	EDIT='gedit'
+	sed "s#^#SYSTEM_#" /etc/os-release > ${WORKLOG}SYSTEM.ini
 fi
 
 # LOAD COLORS
