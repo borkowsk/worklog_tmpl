@@ -87,13 +87,23 @@ alias wsearch=wgrep
 
 alias wfinish='${WORKLOG}wfinish.sh' #finishing current log file
                                      #(eg. for the end of week or month)
-                                     
-alias rgit='"$DEFGIT"'
-alias git='${WORKLOG}wgit.sh'   
-alias wgit='${WORKLOG}wgit.sh'
-alias gits='"$DEFGIT" status'	      #Status of current git directory
-alias gs='"$DEFGIT" status'          #remove it, if you use GhostScript !!!
+if [[ -n "$DEFGIT" ]]
+then                                       
+	alias rgit='"$DEFGIT"'
+	alias git='${WORKLOG}wgit.sh'   
+	alias wgit='${WORKLOG}wgit.sh'
+	alias gits='"$DEFGIT" status'	      #Status of current git directory
+	alias gs='"$DEFGIT" status'           #remove it, if you use GhostScript !!!
+fi
 
+if [[ -n "$DEFSVN" ]]
+then   
+	alias rsvn='"$DEFSVN"'
+	alias  svn='${WORKLOG}wsvn.sh'   
+	alias wsvn='${WORKLOG}wsvn.sh'
+	alias svns='"$DEFSVN" status'	      #Status of current git directory
+	alias   ss='"$DEFSVN" status'         #remove it, if ...
+fi
 
 # "worklog" specific functions
 ###############################
